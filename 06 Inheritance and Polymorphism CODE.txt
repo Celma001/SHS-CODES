@@ -1,0 +1,79 @@
+using System;
+
+namespace MyInheritanceDemo
+{
+    class Animal
+    {
+        protected string name;
+
+        public Animal(string n)
+        {
+            name = n;
+            Console.WriteLine("Animal created: " + name);
+        }
+
+        public virtual void Speak()
+        {
+            Console.WriteLine(name + " makes a sound.");
+        }
+
+        ~Animal()
+        {
+            Console.WriteLine("Animals that are ready for adoption: " + name);
+        }
+    }
+
+    class Dog : Animal
+    {
+        public Dog(string n) : base(n) { }
+
+        public override void Speak()
+        {
+            Console.WriteLine(name + " says: Woof!");
+        }
+    }
+
+    class Cat : Animal
+    {
+        public Cat(string n) : base(n) { }
+
+        public override void Speak()
+        {
+            Console.WriteLine(name + " says: Meow!");
+        }
+    }
+
+    interface IAdoptable
+    {
+        void ShowInfo();
+    }
+
+    class ShelterPet : Dog, IAdoptable
+    {
+        public ShelterPet(string n) : base(n) { }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine(name + " is ready for adoption!");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Animal a = new Animal("Dog");
+            a.Speak();
+
+            Dog d = new Dog("Buddy");
+            d.Speak();
+
+            Cat c = new Cat("Mittens");
+            c.Speak();
+
+            ShelterPet sp = new ShelterPet("Lucky");
+            sp.Speak();
+            sp.ShowInfo();
+        }
+    }
+}
