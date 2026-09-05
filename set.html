@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      color: #333;
+    }
+    .toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+    }
+    .logout {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f44336;
+      color: #fff;
+      text-align: center;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+    }
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: #f0f0f0;
+      padding: 10px 0;
+      border-top: 1px solid #ddd;
+    }
+    .nav-bar div {
+      color: #007bff;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>App Settings</h2>
+    <ul>
+      <li>Profile Account</li>
+      <li>Notifications</li>
+    </ul>
+
+    <h2>About</h2>
+    <ul>
+      <li>About Panasonic Principle</li>
+      <li>App Version 1.0.0</li>
+    </ul>
+
+    <div class="toggle">
+      <span>Dark Mode</span>
+      <input type="checkbox" checked>
+    </div>
+
+    <button class="logout">Log out account</button>
+  </div>
+
+  <div class="nav-bar">
+    <div>🏠</div>
+    <div>📖</div>
+    <div>➕</div>
+    <div>📅</div>
+    <div>⚙️</div>
+  </div>
+</body>
+</html>

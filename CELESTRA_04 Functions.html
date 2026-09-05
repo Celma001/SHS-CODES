@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Factorial Calculator</title>
+</head>
+<style>
+     body {
+      background-color: rgb(230, 173, 204);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h2 {
+      color: rgb(252, 252, 252);
+    }
+
+    p {
+      font-size: 16px;
+      color: rgb(252, 252, 252);
+    }
+</style>
+<body>
+  <script>
+    const number = parseInt(prompt("Please enter your fav number:"));
+    if (isNaN(number)) {
+      alert("Bawal po yan number po ang need ate.");
+    } else if (number < 0) {
+      alert("Error po! Factorial for negative numbers does not exist.");
+    } else if (number === 0) {
+      alert(`The factorial of ${number} is 1.`);
+    } else {
+      let factorial = 1;
+      for (let i = 1; i <= number; i++) {
+        factorial *= i;
+      }
+
+      alert(`The factorial of ${number} is ${factorial}.`);
+    }
+  </script>
+  <h2>Celestra, Marriel Angela
+    MAWD - 302
+
+  </h2>
+</body>
+</html>

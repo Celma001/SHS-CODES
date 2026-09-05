@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iron Man Profile</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0b0c10;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+  border: 2px solid #c8102e; 
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #c8102e;
+}
+
+.section {
+  padding: 15px;
+  border: 1px solid #c8102e;
+  border-radius: 10px;
+  background-color: #2e2e2e;
+}
+
+.section h2 {
+  margin-top: 10px;
+  color: #ffd700; 
+  font-size: 1.3em;
+  text-align: center;
+  text-shadow: 0 0 5px #c8102e;
+}
+
+.bar {
+  background-color: #555;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 5px 0;
+}
+
+.bar-fill {
+  height: 20px;
+  background-color: #c8102e;
+  text-align: center;
+  color: white;
+  font-size: 0.9em;
+  line-height: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 5px 0;
+  color: #fdd835; 
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stat {
+  background-color: #3a3a3a;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: #f8f8f8;
+  box-shadow: 0 0 5px #c8102e;
+}
+
+.stat span {
+  display: block;
+  font-size: 1.1em;
+  color: #ffd700;
+}
+
+.profile-img {
+  max-width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto 10px;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 10px #c8102e;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+
+    <div class="section">
+      <img src="https://wallpaperaccess.com/full/801789.jpg" alt="Iron Man" class="profile-img">
+      <h2>Iron Man</h2>
+      <center>
+      <p><strong>Race:</strong> Human</p>
+      <p><strong>Class:</strong> Fighter</p>
+      </center>
+    </div>
+
+    <div class="section">
+      <h2>Status</h2>
+      <p>HP: 95/100</p>
+      <div class="bar"><div class="bar-fill" style="width: 95%;">95%</div></div>
+      <p>MP: 45/50</p>
+      <div class="bar"><div class="bar-fill" style="width: 90%;">45%</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Inventory</h2>
+      <center>
+      <ul>
+        <li>Iron Man Suit (Mark III)</li>
+        <li>Repulsor Blasters</li>
+        <li>Arc Reactor</li>
+        <li>J.A.R.V.I.S. AI System</li>
+        <li>Unibeam Chest Cannon</li>
+        <li>Nanotech Gauntlets</li>
+      </ul>
+      </center>
+    </div>
+
+    <div class="section">
+      <h2>Core Stats</h2>
+      <div class="stats-grid">
+        <div class="stat"><span>STR</span>10</div>
+        <div class="stat"><span>DEX</span>13</div>
+        <div class="stat"><span>CON</span>12</div>
+        <div class="stat"><span>INT</span>15</div>
+        <div class="stat"><span>WIS</span>8</div>
+        <div class="stat"><span>CHA</span>14</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
