@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Information</title>
+
+  <link rel="stylesheet" href="07 DOM and Events (Part 1).css">
+
+</head>
+<body>
+  <h2>Student Information</h2>
+  <hr>
+
+  <div class="container">
+    <div class="student-list">
+      <div class="title">Student List</div>
+      <div id="studentContainer"></div>
+      <button class="remove-btn" onclick="removeLastStudent()">REMOVE</button>
+    </div>
+
+    <div class="student-info">
+      <div class="info-section">
+        <div class="info-label">Name: <span id="dispName">-</span></div>
+        <div class="info-label">Age: <span id="dispAge">-</span></div>
+        <div class="info-label">Course: <span id="dispCourse">-</span></div>
+        <div class="info-label">Section: <span id="dispSection">-</span></div>
+        <div class="info-label">Student Number: <span id="dispStudentNumber">-</span></div>
+      </div>
+
+      <div class="info-section">
+        <div class="form-label">Name: <input type="text" id="inName"></div>
+        <div class="form-label">Age: <input type="number" id="inAge"></div>
+        <div class="form-label">Course: <input type="text" id="inCourse"></div>
+        <div class="form-label">Section: <input type="text" id="inSection"></div>
+        <div class="form-label">Student Number: <input type="text" id="inStudentNumber"></div>
+        <button class="add-btn" onclick="addStudent()">ADD</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let students = [
+      { name: "Denise", age: 18, course: "BSIT", section: "BSIT101", studentnumber: "020001234" },
+      { name: "Angel", age: 19, course: "BSCS", section: "BSCS201", studentnumber: "020002341" },
+      { name: "Katherine", age: 20, course: "BSIT", section: "BSIT301", studentnumber: "020003412" },
+    ];
+
+    function renderStudents() {
+      const container = document.getElementById("studentContainer");
+      container.innerHTML = "";
+      students.forEach((s, index) => {
+        const div = document.createElement("div");
+        div.className = "box";
+        div.textContent = s.name;
+        div.onclick = () => displayInfo(index);
+        container.appendChild(div);
+      });
+    }
+
+    function displayInfo(index) {
+  document.getElementById("dispName").textContent = students[index].name;
+  document.getElementById("dispAge").textContent = students[index].age;
+  document.getElementById("dispCourse").textContent = students[index].course;
+  document.getElementById("dispSection").textContent = students[index].section;
+  document.getElementById("dispStudentNumber").textContent = students[index].studentnumber;
+
+
+    }
+
+    function addStudent() {
+    const name = document.getElementById("inName").value;
+ const age = document.getElementById("inAge").value;
+      const course = document.getElementById("inCourse").value;
+            const section = document.getElementById("inSection").value;
+            const studentnumber = document.getElementById("inStudentNumber").value;
+
+
+
+      if (name && age && course && section && studentnumber) {
+        students.push({ name, age: parseInt(age), course, section, studentnumber });
+        renderStudents();
+        document.getElementById("inName").value = "";
+        document.getElementById("inAge").value = "";
+        document.getElementById("inCourse").value = "";
+        document.getElementById("inSection").value = "";
+        document.getElementById("inStudentNumber").value = "";
+      } else {
+        alert("Kulang pa po!");
+      }
+    }
+
+    function removeLastStudent() {
+      if (students.length > 0) {
+        students.pop();
+        renderStudents();
+      } else {
+        alert("Wala na pong buburahin.");
+      }
+    }
+
+    renderStudents();
+  </script>
+</body>
+</html>
